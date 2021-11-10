@@ -1,0 +1,116 @@
+.uploader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em;
+}
+
+.drop-zone{
+    background: #eee;
+    height: 10rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #dee2e6;
+    width: 100%;
+}
+.uploader-title{
+    border: 2px solid #dee2e6;
+    width: 100%;
+    padding: 0.5em 1.5em;
+    border-bottom: none;
+    text-align: left;
+}
+.progress{
+    width: 100%;
+}
+.uploader-footer{
+    margin-top: 1em;
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+.header{
+    padding: 1em 3em 0 3em;
+    text-align: left;
+}
+.youtube-list-container{
+    text-align: left;
+    padding: 0 3em;
+    display: flex;
+    flex-wrap: wrap;
+    height: 70vmin;
+}
+::ng-deep .youtube-list-container .card-header{
+    padding: 0;
+}
+
+::ng-deep .youtube-list-container .btn-link{
+    width: 100%;
+    text-align: left;
+}
+
+.card-list-container{
+    border: 1px solid;
+    padding: 0;
+    margin: 0.4em;
+}
+.cards-container{
+    min-height: 11em;
+}
+.card-list-header{
+    display: flex;
+    border-bottom: 1px solid;
+    padding: 0.5em;
+}
+.header-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-buttons i {
+    margin: 0 0.5em;
+}
+.card-content{
+    padding: 1em;
+}
+.card-content label{
+    font-weight: 600;
+}
+.modal-header-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-header-container h4{
+    flex:1;
+}
+.input-container{
+    margin: 1em 0;
+}
+input, select, textarea{
+    box-shadow: none !important;
+    border-radius: 0;
+}
+
+.ng-invalid{
+    border-color: #f00 !important;
+}
+.page-container{
+    text-align: left;
+    padding: 2em 4em 0 4em;
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    
+    .youtube-list-container{
+        overflow: auto;
+    }
+  }

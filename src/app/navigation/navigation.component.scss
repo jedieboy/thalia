@@ -1,0 +1,49 @@
+.navbar{
+    padding: 1rem 5rem;
+    font-family: 'nyora', cursive;
+    font-size: 1.4em;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+a:hover{
+    color: #d66bd7;
+}
+.navbar-bg{
+    background: #ffffff;
+}
+.navbar-bg .nav-link{
+    color: #000000;
+}
+.navbar-bg .nav-link:hover{
+    color: #d66bd7;
+}
+.active{
+    color: #d66bd7;
+}
+
+.navbar-bg .active{
+    color: #d66bd7;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar{
+        padding: 1rem;
+        font-family: 'nyora', cursive;
+        font-size: 1.4em;
+        
+
+        .navbar-toggler{
+            color: #ffffff;
+        }
+    }
+
+    .navbar-bg{
+        .navbar-toggler{
+            color: #000000;
+        }
+    }
+}

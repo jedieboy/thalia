@@ -1,0 +1,46 @@
+.home-image{
+    width: 30em;
+    height: 40em;
+    padding: 1em;
+}
+.home-heading{
+    font-family: nyora, cursive;
+    color: #d66bd7;
+    font-size: 1.7em;
+}
+.image-container, .text-container{
+    width: 50%;
+}
+.image-container{
+    float: left;
+    text-align: right;
+}
+.text-container{
+    float: right;
+    margin: auto;
+    padding: 1em;
+}
+.home-container{
+    text-align: center;
+    margin: auto;
+}
+.home-section{
+    background-image: url("../../assets/images/gallery/IMG_2470.JPG");
+    background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.heading-small{
+    color:#fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    
+    .home-heading{
+        font-size: 13vw;
+    }
+
+  }

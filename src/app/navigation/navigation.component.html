@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg fixed-top"  (scroll)="onWindowScroll($event);">
+    <!-- <a class="navbar-brand" href="#">
+      Brand
+    </a> -->
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleNavbar()"  aria-label="Toggle navigation">
+      <span class="fa fa-bars"></span>
+    </button>
+  
+  
+    <div class="collapse navbar-collapse pull-right" [ngClass]="{ 'show': navbarOpen }" >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link home" (click)="setPage('home')" [ngClass]="page == 'home' ? 'active' : '' ">Home</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link story" (click)="setPage('story')" [ngClass]="page == 'story' ? 'active' : '' ">Story</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link youtube" (click)="setPage('youtube')" [ngClass]="page == 'youtube' ? 'active' : '' ">Youtube</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link about" (click)="setPage('about')" [ngClass]="page == 'about' ? 'active' : '' ">About</a>
+      </li>
+      </ul>
+    </div>
+</nav>

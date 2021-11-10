@@ -1,0 +1,160 @@
+ <section>
+    <div class="col-md-12 col-xs-3">
+        <div class="header">
+            <h3>Youtube Admin</h3>
+        </div>
+        <div class="youtube-list-container">            
+            <div *ngFor="let list of ytList | slice: (page-1) * pageSize : page * pageSize; let i= index" class="cards-container col-xs-3 col-md-3" >
+                
+                <div class="card-list-container">
+                    <div class="card-list-header">
+                        <div class="col-md-9 col-xs-9">
+                            <h5>{{list.title}}</h5>
+                        </div>
+                        <div class="col-md-3 col-xs-3 header-buttons">
+                            <i class="fa fa-pencil" (click)="popupModal(editYoutube, list)"></i>
+                            <i class="fa fa-trash-o" (click)="deleteItem(list)"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <label>Youtube ID:</label>&nbsp;
+                            <span>{{list.id}}</span>
+                        </div>
+                        <div>
+                            <label>Title:</label>&nbsp;
+                            <span>{{list.title}}</span>
+                        </div>
+                        <div>
+                            <label>Subtitle:</label>&nbsp;
+                            <span>{{list.subtitle}}</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="page-container" *ngIf="ytList.length > pageSize">
+            <ngb-pagination
+            [(page)]="page"
+            [pageSize]="pageSize"
+            [collectionSize]="ytList.length"></ngb-pagination>
+        </div>
+
+        <div class="uploader-container">
+            <div class="uploader-title">
+                <h3>Upload Youtube Files</h3>
+            </div>
+            <div ng2FileDrop
+            [uploader]="uploader"
+            class="drop-zone">
+            <div>
+                Drag and drop files
+                <br/>or
+            </div>
+            <input type="file" #upload class="form-control" hidden ng2FileSelect [uploader]="uploader" multiple/>
+            <button class="btn btn-primary" (click)="upload.click()">Choose File</button> 
+
+            </div>
+                <table class="table table-bordered" *ngIf="uploader.queue.length > 0">
+                    <thead>
+                    <tr>
+                        <th>Youtube ID</th>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Subtitle</th>
+                        <th>Progress</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of uploader.queue" [formGroup]="item.dynamicForm">
+                        <td>
+                            <input
+                            type="text"
+                            class="form-control"
+                            required
+                            formControlName="youtubeId"
+                            />
+                        </td>
+                        <td><strong>{{ item?.file?.name }}</strong></td>
+                        <td nowrap>
+                            <input
+                            type="text"
+                            class="form-control"
+                            required
+                            formControlName="title"
+                            />
+                        </td>
+                        <td nowrap>
+                            <input
+                            type="text"
+                            class="form-control"
+                            required
+                            formControlName="subtitle"
+                            />
+                        </td>
+                        <td *ngIf="uploader.options.isHTML5">
+                            <div class="progress">
+                                <ngb-progressbar [value]="item.progress" type="info" [striped]="true" [animated]="true" ></ngb-progressbar>
+                            </div>
+                        </td>
+                        <td nowrap>
+                            <button type="button" class="btn btn-danger btn-xs"
+                                    (click)="item.remove()">
+                                <span class="fa fa-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            
+            
+            <div class="uploader-footer">
+                <button class="btn btn-primary" (click)="uploadYT()">Upload</button>
+            </div>
+        </div>
+         
+    </div>     
+ </section>
+
+ <ng-template #editYoutube class="modal-dialog">
+     <div class="modal-header">
+        <div class="modal-header-container">
+            <h4>Edit Files</h4>
+            <span (click)="close()" class="fa fa-times"></span>
+        </div>
+     </div>
+     <div class="modal-body">
+         <form #ytForm="ngForm">
+            <div class="input-container">
+                <label>Youtube ID</label>
+                <div>
+                    <input name="ytid" type="text" class="form-control" #ytid="ngModel" [(ngModel)]="dataModal.id" required placeholder="Youtube ID">
+                </div>
+             </div>
+             <div class="input-container">
+                <label>Title</label>
+                <div>
+                    <input name="ytTitle" type="text" class="form-control" #ytTitle="ngModel"  [(ngModel)]="dataModal.title" required placeholder="Title">
+                </div>
+             </div>
+             <div class="input-container">
+                <label>Subtitle</label>
+                <div>
+                    <input name="ytSubs" type="text" class="form-control" #ytSubs="ngModel"  [(ngModel)]="dataModal.subtitle" placeholder="Subtitle">
+                </div>
+             </div>
+         </form>
+        
+        
+     </div>
+     <div class="modal-footer">
+         <div>
+             <input type="submit" value="Update" (click)="updateYT(ytForm)" />
+         </div>
+     </div>
+ </ng-template>
+  
+  

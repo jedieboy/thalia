@@ -1,0 +1,53 @@
+.home-image{
+    width: 30em;
+    height: 40em;
+    padding: 1em;
+    // background: url(../../assets/images/gallery/IMG_0986.JPG)fixed center;
+}
+.about-header{
+    font-family: nyora,cursive;
+    color: #000000;
+    // font-size: 1.7em;
+    margin: 1em;
+}
+.image-container, .text-container{
+    width: 50%;
+}
+.image-container{
+    float: left;
+    text-align: left;
+}
+.text-container{
+    float: right;
+    margin: auto;
+    padding: 1em;
+}
+.home-container{
+    text-align: center;
+    margin: auto;
+}
+.home-section{
+    background-image: url("../../assets/images/home-bg.png");
+}
+@media only screen and (max-width: 768px) {
+
+    .image-container, .text-container{
+        width: 100%;
+    }
+    .image-container{
+        float: left;
+        text-align: center;
+    }
+    .text-container{
+        float: right;
+        margin: auto;
+        padding: 1em;
+        div{
+            text-align: center !important;
+        }
+    }
+    .about-header{
+        margin: 5vw;
+        font-size: 10vw;
+    }
+}

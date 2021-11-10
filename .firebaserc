@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "liadatabase": {
+      "hosting": {
+        "nyora": [
+          "liadatabase"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "liadatabase"
+  }
+}

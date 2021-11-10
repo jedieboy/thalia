@@ -1,0 +1,34 @@
+<div class="youtube-heading-img">
+
+    <div class="col-md-12 heading-img-1"></div>
+    <div class="youtube-header">
+        
+        <button (click)="gotoYoutube()" class="subscribe"><i class="fa fa-youtube"></i>&nbsp; Subscribe</button>
+        <h1>Youtube Channel</h1>
+    </div>
+    
+</div>
+
+<section class="youtube-section">
+    <div class="main-vid-container">
+        <youtube-player id="player"></youtube-player> 
+    </div>
+    
+    <div class="youtube-content thumb-vid-container">
+        <div class="vid-header">
+            <h4>Youtube</h4>
+        </div>
+        <div style="overflow: auto;">
+            <div *ngFor="let yt of galData; index as i " class="img-container" (click)="setYTVideo(yt)" [ngClass]="yt.selected ? 'selected' : ''">
+                <div class="img-content">
+                    <img src="{{yt.src | async}}" />
+                </div>
+                <div class="img-title-content">
+                    <span class="title-thumb">{{yt.title}}</span>
+                    <span class="subtitle-thumb">{{yt.subtitle}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

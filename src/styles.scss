@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@font-face {
+    font-family: nyora;
+    font-weight: bold;
+    font-style: normal;
+    src: url(assets/fonts/ReklameScriptW00Medium.ttf) format("truetype");
+  }
+
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  section{
+    display: flex !important;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    // height: calc(100vh - 22px);
+    min-height: 100vh;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@media only screen and (max-width: 768px){
+      body{
+        font-size: 3.3vw;
+        overflow-x: hidden;
+      }
+      html{
+        overflow-x: hidden;
+      }
+}

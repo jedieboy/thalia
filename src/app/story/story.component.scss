@@ -1,0 +1,46 @@
+.home-image{
+    width: 30em;
+    height: 40em;
+    padding: 1em;
+}
+.about-header{
+    font-family: nyora,cursive;
+    color: #000000;
+    margin: 1em;
+}
+.image-container, .text-container{
+    width: 50%;
+}
+.image-container{
+    float: right;
+    text-align: right;
+}
+.text-container{
+    float: left;
+    margin: auto;
+    padding: 1em;
+}
+.home-container{
+    text-align: center;
+    margin: auto;
+}
+.home-section{
+    background-image: url("../../assets/images/home-bg.png");
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .image-container, .text-container{
+        width: 100%;
+    }
+    .text-container {
+        div{
+            text-align: center !important;
+        }
+    }
+    .about-header{
+        margin: 5vw;
+        font-size: 10vw;
+    }
+
+  }
